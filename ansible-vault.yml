@@ -1,0 +1,11 @@
+---
+- name: ansible playbook to test ansible volt
+  hosts: all
+  vars_files:
+    - vault-pass.yml      
+  become: true
+  tasks:
+  - name: Clone repo
+    git:
+      repo:  https://KhGetHub:{{ password }}@github.com/KhGetHub/vault.git     
+      dest: /opt/ansadmin/test-vault
